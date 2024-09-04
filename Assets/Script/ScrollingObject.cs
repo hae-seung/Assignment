@@ -8,10 +8,7 @@ public class ScrollingObject : MonoBehaviour
     public float speed;
     private void Update()
     {
-       
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
-       
+       if(!GameManager.Instance.Dead)
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
-
-    
 }
