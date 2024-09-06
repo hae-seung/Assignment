@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
    private Rigidbody2D rb;
+   public Text scoreText;
    public event Action onDeath;
    private void Start()
    {

@@ -2,19 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     public bool Dead { get; private set; }
+    public Text scoreText;
     public PlayerMovement player;
-    public UIManager uiManager;
     public int Score { get; set; }
 
 
     private void Update()
     {
-        uiManager.UpdateScore(Score);
+        scoreText.text = "Score" + "\n" + Score;
     }
 
     private void OnEnable()
@@ -30,11 +32,11 @@ public class GameManager : Singleton<GameManager>
     private void Die()
     {
         Dead = true;
-        Time.timeScale = 0;
-        uiManager.ActiveGameOverPanel(Score);
+        PlayerPrefs.SetInt("Score" , Score);
+        SceneManager.LoadScene("GameOver");
     }
-
-
+    
+    
     private void Init()
     {
         Score = 0;

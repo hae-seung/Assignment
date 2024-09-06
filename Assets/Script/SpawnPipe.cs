@@ -18,7 +18,7 @@ public class SpawnPipe : MonoBehaviour
     private void Update()
     {
         curTime += Time.deltaTime;
-        if (curTime >= time)
+        if (curTime >= time && !GameManager.Instance.Dead)
         {
             GameObject pipe = Instantiate(pipePrefab);
             pipe.transform.position = new Vector3(0, Random.Range(-5.29f, 0.37f), 0);
