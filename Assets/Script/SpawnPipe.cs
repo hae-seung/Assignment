@@ -12,7 +12,7 @@ public class SpawnPipe : MonoBehaviour
 
     private void Start()
     {
-        time = UnityEngine.Random.Range(1.5f,2.5f);
+        time = 1.0f;
     }
     
     private void Update()
@@ -21,7 +21,7 @@ public class SpawnPipe : MonoBehaviour
         if (curTime >= time)
         {
             GameObject pipe = Instantiate(pipePrefab);
-            pipe.transform.position = new Vector3(0, Random.Range(-4.17f, 2.62f), 0);
+            pipe.transform.position = new Vector3(0, Random.Range(-5.29f, 0.37f), 0);
             pipe.transform.parent = gameObject.transform;
             curTime = 0;
             time = UnityEngine.Random.Range(1.5f, 2.5f);

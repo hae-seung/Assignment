@@ -31,7 +31,7 @@ public class GameManager : Singleton<GameManager>
     {
         Dead = true;
         Time.timeScale = 0;
-        uiManager.ActiveGameOverPanel();
+        uiManager.ActiveGameOverPanel(Score);
     }
 
 
